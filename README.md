@@ -32,7 +32,7 @@ To achieve these high accuracy scores, the Breast Cancer Prediction model was tr
 The user interface for the Breast Cancer Prediction model was developed using the Streamlit framework. It features a slider bar where the user can select input data, and upon selection, the 10 most important features are displayed. The model then predicts the type of cancer based on the input data and displays the probability of each type. The user-friendly interface allows for easy use of the model
 
 ## Demo Video
-
+https://user-images.githubusercontent.com/97497771/221523822-49c317d5-c40d-4339-b612-e93b5dd86cb2.webm
 
 ## Usage
 To run the Breast Cancer Prediction model, 
