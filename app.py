@@ -82,7 +82,7 @@ with st.container():
 load_clf = pickle.load(open('D:\cancer_diagnosis\cancer_diagnosis.pkl', 'rb'))
 
 # Scalling the unser input function
-orginal_data = pd.read_csv('D:\cancer_diagnosis\model_building\_final_data.csv')
+orginal_data = pd.read_csv('D:\cancer_diagnosis\_final_data.csv')
 X = orginal_data.drop('diagnosis',axis=1).values
 std = StandardScaler()
 std.fit(X)
