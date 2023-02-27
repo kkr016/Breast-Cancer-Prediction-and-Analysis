@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 import pickle
 from sklearn.preprocessing import StandardScaler
+from PIL import Image
 
 # Page title
 
@@ -95,14 +96,27 @@ prediction = load_clf.predict(scalled_input)
 prediction_proba = load_clf.predict_proba(scalled_input)
 
 with st.container():
+    
+    text_column, image_column = st.columns((1, 2))
 
-    st.write("---")
-    st.subheader('Prediction')
+    with text_column:
+        st.write("---")
+        st.subheader('Prediction')
 
-    cancer_type = np.array(['Bening', 'Malignant'])
-    st.write(cancer_type[prediction])
+        cancer_type = np.array(['Bening', 'Malignant'])
+        st.write(cancer_type[prediction])
 
-    st.write("---")
-    st.write("##")
-    st.subheader('Prediction Probability')
-    st.write(prediction_proba)
+        st.write("---")
+        st.write("##")
+        st.subheader('Prediction Probability')
+        st.write(prediction_proba)
+        
+    with image_column:
+        st.write("---")
+        if prediction == 1:
+            image = Image.open("D:/cancer_diagnosis/image/malignant.png")
+            st.image(image,width=400)
+        else:
+            image = Image.open("D:/cancer_diagnosis/image/bening.png")
+            st.image(image,width=400)
+        
